@@ -1,0 +1,9 @@
+# Conceptual setup for Exercise 3
+import geopandas as gpd
+# Assume global_roads.shp exists locally
+
+# Define the list of columns needed for the GeoAI model...
+
+# Load the data efficiently...
+
+# Verification step...

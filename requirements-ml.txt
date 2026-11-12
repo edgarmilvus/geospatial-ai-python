@@ -1,0 +1,18 @@
+# Optional extras: the deep-learning stack.
+#
+# The offline suite installs nothing from here. Chapter 16 trains a small U-Net and
+# chapter 19 runs a graph network; both are written against these pins and both are
+# skipped — with the command printed — on a machine that has only requirements.txt.
+#
+# A CPU wheel is enough: every listing in the volume runs on CPU in seconds, and the
+# two chapters say so.
+torch==2.15.0
+torchvision==0.29.2
+
+# Chapter 17 segments satellite chips with Meta's Segment Anything. The weights are
+# a 375 MB download and the package is not on PyPI; the chapter's harness runs a
+# small stub of the mask decoder instead, so this line is what a reader installs to
+# run the real thing:
+#
+#   pip install git+https://github.com/facebookresearch/segment-anything.git
+#   curl -O https://dl.fbaipublicfiles.com/segment_anything/sam_vit_b_01ec64.pth

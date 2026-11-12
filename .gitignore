@@ -1,0 +1,11 @@
+# A virtual environment belongs to the machine that made it.
+.venv/
+venv/
+# Every run recreates these; the archives do not carry them.
+output/
+files/output/
+__pycache__/
+*.pyc
+.DS_Store
+# Derived extracts; the book and the tree are the sources of truth.
+manifest.json

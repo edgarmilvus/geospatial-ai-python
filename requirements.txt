@@ -1,0 +1,40 @@
+# The stack the volume's listings and harnesses were verified on.
+# Python 3.11 or 3.12 — not 3.13, which some of these wheels do not have yet.
+#
+# Everything here is needed by the offline suite: the vector and raster stack,
+# the static and interactive plotting stack, the dashboard stack, and the
+# language-model client the Text-to-Map chapter builds an agent on.
+numpy==2.2.6
+pandas==2.2.3
+shapely==2.1.0
+pyproj==3.7.1
+fiona==1.10.1
+geopandas==1.1.2
+affine==2.4.0
+rasterio==1.4.3
+rioxarray==0.19.0
+xarray==2025.4.0
+matplotlib==3.10.3
+# Chapter 5 projects onto GeoAxes; cartopy ships binary wheels for 3.11/3.12.
+cartopy==0.26.0
+pyshp==3.1.6
+mapclassify==2.8.1
+contextily==1.6.2
+folium==0.19.5
+branca==0.8.1
+plotly==6.1.2
+dash==2.18.2
+dash-bootstrap-components==1.7.1
+scipy==1.15.3
+scikit-learn==1.6.1
+seaborn==0.13.2
+requests==2.33.0
+geopy==2.5.0
+sqlalchemy==2.0.41
+pydantic==2.12.5
+openai==2.54.0
+langchain-core==1.7.0
+langchain-openai==1.7.3
+langchain-community==0.4.2
+langchain-classic==1.0.8
+tiktoken==0.14.0
