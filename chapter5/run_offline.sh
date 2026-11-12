@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_professional_cart/example" "run_professional_choropleth.py"
+run_harness "professional_cartography_with_crs_control/example" "run_professional_choropleth.py"
 run_harness "basic_code_example/example" "run_plate_carree_world.py"
-run_harness "exercise_1/exercise" "run_projection_distortion.py"
+run_harness "exercise_1_visualizing_projection_distortion/exercise" "run_projection_distortion.py"
 run_harness "exercise_2_dynamic_scale_bars_and_north_arrow/exercise" "run_scale_bar_north_arrow.py"
 run_harness "exercise_3_advanced_matplotlib_object_model_f/exercise" "run_main_map_inset.py"
 run_harness "exercise_4_refactoring_and_enhancing_a_multi/exercise" "run_refactored_annotation.py"

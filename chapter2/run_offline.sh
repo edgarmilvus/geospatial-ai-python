@@ -59,7 +59,7 @@ run_harness() {
 
 run_harness "advanced_application_script/example" "run_ingestion_validation.py"
 run_harness "basic_code_example/example" "run_ingestion_round_trip.py"
-run_harness "exercise_1/exercise" "run_parks_integrity.py"
+run_harness "exercise_1_foundational_ingestion_and_data_in/exercise" "run_parks_integrity.py"
 run_harness "exercise_2_cloud_native_ingestion_via_url_geo/exercise" "run_cloud_native_read.py"
 run_harness "exercise_3_performance_optimization_through_s/exercise" "run_selective_columns.py"
 run_harness "exercise_4_advanced_modification_challenge_pr/exercise" "run_async_tasks.py"

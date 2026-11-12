@@ -59,7 +59,7 @@ run_harness() {
 
 run_harness "advanced_application_script/example" "run_results_dashboard.py"
 run_harness "basic_code_example/example" "run_zone_dashboard.py"
-run_harness "exercise_1/exercise" "run_model_run_dashboard.py"
+run_harness "exercise_1_building_the_foundational_geoai_da/exercise" "run_model_run_dashboard.py"
 run_harness "exercise_2_implementing_cross_filtering_and_m/exercise" "run_cross_filter.py"
 run_harness "exercise_3_advanced_modification_challenge_in/exercise" "run_segmentation_toggle.py"
 run_harness "exercise_4_interactive_challenge_optimizing_p/exercise" "run_state_store.py"

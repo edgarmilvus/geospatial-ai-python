@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_analyzing_voter_d/example" "run_voter_turnout.py"
+run_harness "analyzing_voter_disparity_via_choropleth_mapp/example" "run_voter_turnout.py"
 run_harness "basic_code_example/example" "run_choropleth_density.py"
-run_harness "exercise_1/exercise" "run_classification_bias.py"
+run_harness "exercise_1_the_impact_of_classification_schem/exercise" "run_classification_bias.py"
 run_harness "exercise_2_mapping_electoral_margin_using_jen/exercise" "run_electoral_margin.py"
 run_harness "exercise_3_advanced_filtering_with_logical_op/exercise" "run_coastal_filter.py"
 run_harness "exercise_4_the_interactive_challenge_dynamic/exercise" "run_interactive_choropleth.py"

@@ -1,47 +1,68 @@
-# Exercise 1 — the prompt, and where its solution runs
+# Exercise 1 — the five properties and the warning
 
 ## What it does
 
-This folder holds the exercise's prompt fence exactly as the book prints it: the
-reader's signature, its docstring and the `pass` the student replaces. It is
-published as an `exercise` block by the extractor, so it keeps its own folder, but
-it is not a program and is not harnessed.
-
-The worked solution sits in the sibling folder `chapter11/exercise_1/`, because the
-book's *Solutions and Explanations* heading is a bare `### Exercise 1` and the
-extractor gives that heading its own slug.
+Writes a three-band 120 x 90 scene in UTM zone 33N at 30 m and a single-band scene
+with the same geometry, then reads both with `inspect_raster_metadata`. The
+three-band scene prints the five properties the exercise names and passes the POLA
+check; the single-band scene prints the warning with its own band count. A third
+call points at a path that does not exist and returns `None` after a readable
+message.
 
 ## The listings
 
 | file | what it is |
 | --- | --- |
-| `prompt_sketch_exercise_1.py` | the exercise's prompt fence, byte-identical to the book |
-| `../exercise_1/exercise/files/metadata_deep_dive.py` | the solution: two scenes, the reader, the warning |
-| `../exercise_1/exercise/files/run_metadata_deep_dive.py` | the harness: 21 assertions on the properties and branches |
+| `prompt_sketch_exercise_1.py` | the exercise statement, exactly as the book prints it |
+| `metadata_deep_dive.py` | the solution: two scenes, the reader, the three calls |
+| `run_metadata_deep_dive.py` | the harness: properties, warning, missing-file branch |
 
 ## Run it
 
 ```bash
-cd chapter11/exercise_1/exercise/files
+cd chapter11/exercise_1_geospatial_metadata_deep_dive/exercise/files
 python3 metadata_deep_dive.py
 ```
 
-The prompt fence in this folder is a task description, not a program; the worked
-solution and its harness live in the sibling folder, and this command runs them. The
-harness exits non-zero if a property stops being reported, the one-band warning stops
-firing, or a missing file raises instead of returning `None`.
+It writes both scenes, reads the three-band one, the single-band one and a missing
+path, and prints each result. `run_metadata_deep_dive.py` checks the CRS, count,
+dimensions, transform and dtype, then the warning branch and the `None` return, and
+exits non-zero when a property stops being reported.
+
+```text
+--- Wrote metadata_scene.tif and single_band_scene.tif ---
+
+--- Geospatial Metadata Deep Dive ---
+1. Coordinate Reference System (CRS): EPSG:32633
+2. Total Number of Bands (count): 3
+3. Dimensions (Width x Height): 120 x 90
+4. Affine Transform Matrix:
+| 30.00, 0.00, 300000.00|
+| 0.00,-30.00, 5000000.00|
+| 0.00, 0.00, 1.00|
+5. Pixel Data Type (dtype): uint16
+-----------------------------------
+Verification successful: Raster has 3 or more bands.
+...
+WARNING: Band count (1) is insufficient for standard RGB/multispectral tasks.
+
+Error opening raster file at does_not_exist.tif: RasterioIOError
+```
 
 ## What it produces
 
 | path | what it is |
 | --- | --- |
-| `../exercise_1/exercise/output/metadata_scene.tif` | the three-band scene the solution reads |
-| `../exercise_1/exercise/output/single_band_scene.tif` | the scene that trips the warning |
-| `../exercise_1/exercise/output/metadata_deep_dive.json` | the harness's measured properties |
+| `output/metadata_scene.tif` | the three-band scene, 120 x 90, uint16 |
+| `output/single_band_scene.tif` | the one-band scene that trips the warning |
+| `output/metadata_deep_dive.json` | the harness's properties and branch results |
 
 ## Notes
 
-- The sketch is kept byte-identical so the book and the tree stay in step; editing it
-  here would detach the block from its heading.
-- A real solution to the five requirements is the sibling `metadata_deep_dive.py`,
-  including the POLA branch the prompt asks for.
+- The book's solution read `IMAGE_PATH` that the reader did not have. The listing
+  generates both scenes first, so the three branches are reachable on a clean machine.
+- The warning is a branch of the reader, not a print in `main`: it fires whenever the
+  dataset reports fewer than three bands, and the harness checks both sides.
+- The error path prints the file name and the exception class, not the exception
+  text: rasterio's message repeats the absolute path, and a book's terminal output
+  should not carry the reader's home directory.

@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_dynamic_geoai_rep/example" "run_geoai_detections.py"
+run_harness "dynamic_geoai_report_mapping/example" "run_geoai_detections.py"
 run_harness "basic_code_example/example" "run_marker_popup.py"
-run_harness "exercise_1/exercise" "run_drone_severity.py"
+run_harness "exercise_1_visualizing_drone_survey_hotspots/exercise" "run_drone_severity.py"
 run_harness "exercise_2_dynamic_popups_for_geoai_classific/exercise" "run_classification_popups.py"
 run_harness "exercise_3_conditional_clustering_and_priorit/exercise" "run_conditional_clusters.py"
 run_harness "exercise_4_interactive_challenge_time_sensiti/exercise" "run_sensor_filter.py"

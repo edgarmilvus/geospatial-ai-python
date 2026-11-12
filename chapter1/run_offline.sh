@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "2_basic_code_example_defining_and_inspecting/example" "run_crs_objects.py"
+run_harness "defining_and_inspecting_crs_objects/example" "run_crs_objects.py"
 run_harness "advanced_application_script/example" "run_parcel_area.py"
-run_harness "exercise_1/exercise" "run_crs_validation.py"
+run_harness "exercise_1_validating_and_standardizing_input/exercise" "run_crs_validation.py"
 run_harness "exercise_2_high_precision_transformation_for/exercise" "run_precision_transform.py"
 run_harness "exercise_3_geopandas_integration_and_projecti/exercise" "run_crs_alignment.py"
 run_harness "exercise_4_advanced_modification_analyzing_pr/exercise" "run_distortion.py"

@@ -4,7 +4,7 @@ The chapter's code, one folder per section. Every folder holds the listing exact
 
 | folder | listing | what it shows |
 | --- | --- | --- |
-| `advanced_application_script_geopandas_text_to/example/` | `01_text_to_map_agent.py` | Builds the whole pipeline in four pieces: a five-municipality GeoDataFrame with a computed density column, the schema of that frame as text for the model, one tool that executes the code the model writes against the frame, and a ReAct loop that alternates between them until a map exists. |
+| `geopandas_text_to_map_agent/example/` | `01_text_to_map_agent.py` | Builds the whole pipeline in four pieces: a five-municipality GeoDataFrame with a computed density column, the schema of that frame as text for the model, one tool that executes the code the model writes against the frame, and a ReAct loop that alternates between them until a map exists. |
 | `basic_code_example/example/` | `01_tool_schema.py` | Wraps a centroid calculation in the two things a language model needs before it can call anything: a Pydantic model that names and describes the argument, and a `StructuredTool` that binds that model to the function. |
 | `exercise_1_defining_the_core_geospatial_tool/exercise/` | `01_executor_tool.py` | Defines the one tool a Text-to-Map agent is allowed to call. |
 | `exercise_2_enforcing_reliable_output_via_pyda/exercise/` | `01_structured_summary.py` | Defines the four fields an agent must report after it makes a map, then validates one complete answer and one broken answer. |

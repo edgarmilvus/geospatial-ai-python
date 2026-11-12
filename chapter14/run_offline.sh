@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "2_basic_code_example_in_memory_raster_clippin/example" "run_in_memory_clip.py"
-run_harness "advanced_application_script_multi_modal_geoai/example" "run_multi_modal_preparation.py"
-run_harness "exercise_1/exercise" "run_clip_raster_by_vector.py"
+run_harness "in_memory_raster_clipping/example" "run_in_memory_clip.py"
+run_harness "multi_modal_geoai_data_preparation/example" "run_multi_modal_preparation.py"
+run_harness "exercise_1_high_efficiency_raster_clipping_ut/exercise" "run_clip_raster_by_vector.py"
 run_harness "exercise_2_vector_clipping_with_attribute_int/exercise" "run_attribute_integrity.py"
 run_harness "exercise_3_advanced_modification_challenge_co/exercise" "run_cli_preprocessor.py"
 run_harness "exercise_4_interactive_challenge_dynamic_meta/exercise" "run_clean_profile.py"

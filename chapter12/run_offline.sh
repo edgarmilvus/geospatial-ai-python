@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_multi_field_ndvi/example" "run_multi_field_ndvi.py"
-run_harness "basic_code_example_calculating_ndvi_with_nump/example" "run_ndvi_band_math.py"
-run_harness "exercise_1/exercise" "run_ndvi_arithmetic.py"
+run_harness "multi_field_ndvi_analysis_workflow/example" "run_multi_field_ndvi.py"
+run_harness "calculating_ndvi_with_numpy/example" "run_ndvi_band_math.py"
+run_harness "exercise_1_isolating_the_arithmetic_core_calc/exercise" "run_ndvi_arithmetic.py"
 run_harness "exercise_2_geospatial_integration_reading_ban/exercise" "run_read_bands.py"
 run_harness "exercise_3_full_pipeline_execution_generating/exercise" "run_ndvi_pipeline.py"
 run_harness "exercise_4_advanced_challenge_robustness_and/exercise" "run_robust_ndvi.py"

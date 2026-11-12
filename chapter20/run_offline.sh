@@ -59,7 +59,7 @@ run_harness() {
 
 run_harness "advanced_application_script/example" "run_adda_pipeline.py"
 run_harness "basic_code_example/example" "run_geo_distance_tool.py"
-run_harness "exercise_1/exercise" "run_geojson_subsetter.py"
+run_harness "exercise_1_implementing_robust_data_ingestion/exercise" "run_geojson_subsetter.py"
 run_harness "exercise_2_configuring_the_geoai_agent_pipeli/exercise" "run_agent_configuration.py"
 run_harness "exercise_3_modifying_the_damage_classificatio/exercise" "run_multitemporal_damage.py"
 run_harness "exercise_4_interactive_challenge_implementing/exercise" "run_async_gis.py"

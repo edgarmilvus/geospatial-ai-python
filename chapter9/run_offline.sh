@@ -58,12 +58,12 @@ run_harness() {
 }
 
 run_harness "basic_code_example/example" "run_drone_heatmap.py"
-run_harness "exercise_1/exercise" "run_gps_cleaning.py"
+run_harness "exercise_1_data_cleansing_type_conversion_and/exercise" "run_gps_cleaning.py"
 run_harness "exercise_2_dynamic_density_mapping_with_tempo/exercise" "run_dual_period.py"
 run_harness "exercise_3_integrating_environment_variables/exercise" "run_bandwidth_env.py"
 run_harness "exercise_4_the_advanced_modification_challeng/exercise" "run_kernel_comparison.py"
 run_harness "exercise_5_preparing_heatmap_output_for_api_c/exercise" "run_heatmap_api.py"
-run_harness "subsection_3_5_advanced_application_script/example" "run_gridded_kde.py"
+run_harness "advanced_application_script/example" "run_gridded_kde.py"
 echo "---" | tee -a "$LOG"
 if [ "$fail" -ne 0 ]; then
   echo "chapter 9: FAILED" | tee -a "$LOG"

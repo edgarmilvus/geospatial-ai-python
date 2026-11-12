@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_raster_to_vector/example" "run_raster_to_vector_pipeline.py"
-run_harness "basic_code_example_simulating_and_visualizing/example" "run_simulate_segmentation_pair.py"
-run_harness "exercise_1/exercise" "run_tiled_dataset.py"
+run_harness "raster_to_vector_building_detection/example" "run_raster_to_vector_pipeline.py"
+run_harness "simulating_and_visualizing_segmentation_data/example" "run_simulate_segmentation_pair.py"
+run_harness "exercise_1_optimized_data_pipeline_for_large/exercise" "run_tiled_dataset.py"
 run_harness "exercise_2_modifying_u_net_for_enhanced_featu/exercise" "run_se_unet.py"
 run_harness "exercise_3_advanced_evaluation_and_optimal_th/exercise" "run_threshold_optimization.py"
 run_harness "exercise_4_vectorization_and_attribute_assign/exercise" "run_raster_to_vector.py"

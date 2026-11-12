@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_sam_to_geojson_pi/example" "run_sam_to_geojson.py"
+run_harness "sam_to_geojson_pipeline/example" "run_sam_to_geojson.py"
 run_harness "basic_code_example/example" "run_sam_point_prompt.py"
-run_harness "exercise_1/exercise" "run_georeferenced_export.py"
+run_harness "exercise_1_zero_shot_building_footprint_extra/exercise" "run_georeferenced_export.py"
 run_harness "exercise_2_handling_ambiguity_with_bounding_b/exercise" "run_mask_selection.py"
 run_harness "exercise_3_the_modification_challenge_standar/exercise" "run_exporter_abc.py"
 run_harness "exercise_4_interactive_challenge_robust_promp/exercise" "run_prompt_router.py"

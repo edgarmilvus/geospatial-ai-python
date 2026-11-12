@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_urban_infrastruct/example" "run_urban_impact.py"
+run_harness "urban_infrastructure_impact_analysis/example" "run_urban_impact.py"
 run_harness "basic_code_example/example" "run_parcel_metrics.py"
-run_harness "exercise_1/exercise" "run_parcel_analysis.py"
+run_harness "exercise_1_parcel_geometry_validation_area_pe/exercise" "run_parcel_analysis.py"
 run_harness "exercise_2_geodesic_vs_planar_distance_in_hig/exercise" "run_high_latitude_distance.py"
 run_harness "exercise_3_geoai_proximity_agent_dynamic_faci/exercise" "run_proximity_assignment.py"
 run_harness "exercise_4_complex_feature_aggregation_and_ar/exercise" "run_feature_aggregation.py"

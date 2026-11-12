@@ -59,7 +59,7 @@ run_harness() {
 
 run_harness "advanced_application_script/example" "run_deforestation_dates.py"
 run_harness "basic_code_example/example" "run_ndvi_stack.py"
-run_harness "exercise_1/exercise" "run_ndvi_cube.py"
+run_harness "exercise_1_generating_a_normalized_difference/exercise" "run_ndvi_cube.py"
 run_harness "exercise_2_cloud_masking_and_temporal_gap_fil/exercise" "run_cloud_mask_gap_fill.py"
 run_harness "exercise_3_defining_baseline_and_monitoring_p/exercise" "run_baseline_monitoring.py"
 run_harness "exercise_4_advanced_challenge_modifying_spect/exercise" "run_config_merge.py"

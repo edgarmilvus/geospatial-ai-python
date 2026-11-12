@@ -58,8 +58,8 @@ run_harness() {
 }
 
 run_harness "advanced_application_script/example" "run_tile_switcher.py"
-run_harness "basic_code_example_initializing_and_saving_a/example" "run_fuji_map.py"
-run_harness "exercise_1/exercise" "run_sf_contrast.py"
+run_harness "initializing_and_saving_a_folium_map/example" "run_fuji_map.py"
+run_harness "exercise_1_the_urban_contrast_map/exercise" "run_sf_contrast.py"
 run_harness "exercise_2_the_alpine_terrain_explorer/exercise" "run_alpine_terrain.py"
 run_harness "exercise_3_the_coastal_aesthetic_switcher_int/exercise" "run_rio_switcher.py"
 run_harness "exercise_4_modifying_the_advanced_example_til/exercise" "run_london_tiles.py"

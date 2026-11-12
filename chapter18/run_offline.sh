@@ -57,7 +57,7 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_geopandas_text_to/example" "run_text_to_map_agent.py"
+run_harness "geopandas_text_to_map_agent/example" "run_text_to_map_agent.py"
 run_harness "basic_code_example/example" "run_tool_schema.py"
 run_harness "exercise_1_defining_the_core_geospatial_tool/exercise" "run_executor_tool.py"
 run_harness "exercise_2_enforcing_reliable_output_via_pyda/exercise" "run_structured_summary.py"

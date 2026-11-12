@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_efficient_geochip/example" "run_geochip.py"
-run_harness "basic_code_example_reading_core_satellite_met/example" "run_read_scene_metadata.py"
-run_harness "exercise_1/exercise" "run_metadata_deep_dive.py"
+run_harness "efficient_geochip_extraction/example" "run_geochip.py"
+run_harness "reading_core_satellite_metadata/example" "run_read_scene_metadata.py"
+run_harness "exercise_1_geospatial_metadata_deep_dive/exercise" "run_metadata_deep_dive.py"
 run_harness "exercise_2_efficient_windowed_reading_and_arr/exercise" "run_windowed_tile.py"
 run_harness "exercise_3_advanced_modification_challenge_si/exercise" "run_downsample.py"
 run_harness "exercise_4_interactive_band_selection_and_err/exercise" "run_band_selection.py"

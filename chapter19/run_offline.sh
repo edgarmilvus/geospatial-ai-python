@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_stgcn_for_simulat/example" "run_stgcn_forward.py"
-run_harness "basic_code_example_road_network_graph_initial/example" "run_road_network_graph.py"
-run_harness "exercise_1/exercise" "run_graph_construction.py"
+run_harness "stgcn_for_simulated_traffic_forecasting/example" "run_stgcn_forward.py"
+run_harness "road_network_graph_initialization/example" "run_road_network_graph.py"
+run_harness "exercise_1_gis_data_transformation_and_graph/exercise" "run_graph_construction.py"
 run_harness "exercise_2_implementing_the_spatio_temporal_c/exercise" "run_stconv_block.py"
 run_harness "exercise_3_model_training_hyperparameter_opti/exercise" "run_train_stgcn.py"
 run_harness "exercise_4_interactive_challenge_asynchronous/exercise" "run_async_stream.py"

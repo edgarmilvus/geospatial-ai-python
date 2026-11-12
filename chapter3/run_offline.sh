@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_infrastructure_im/example" "run_highway_impact.py"
+run_harness "infrastructure_impact_zone_analysis/example" "run_highway_impact.py"
 run_harness "basic_code_example/example" "run_zoning_overlay.py"
-run_harness "exercise_1/exercise" "run_pipeline_corridor.py"
+run_harness "exercise_1_infrastructure_impact_zone_modelin/exercise" "run_pipeline_corridor.py"
 run_harness "exercise_2_wildfire_damage_quantification_usi/exercise" "run_wildfire_damage.py"
 run_harness "exercise_3_attribute_aggregation_via_spatial/exercise" "run_residential_counts.py"
 run_harness "exercise_4_advanced_geoai_feature_engineering/exercise" "run_enriched_sites.py"

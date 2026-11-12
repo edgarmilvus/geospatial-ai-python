@@ -57,9 +57,9 @@ run_harness() {
   fi
 }
 
-run_harness "advanced_application_script_geoai_feature_eng/example" "run_terrain_feature_stack.py"
-run_harness "basic_code_example_calculating_terrain_slope/example" "run_slope_from_dem.py"
-run_harness "exercise_1/exercise" "run_resample_dem.py"
+run_harness "geoai_feature_engineering_from_dems/example" "run_terrain_feature_stack.py"
+run_harness "calculating_terrain_slope/example" "run_slope_from_dem.py"
+run_harness "exercise_1_dem_ingestion_resampling_and_metad/exercise" "run_resample_dem.py"
 run_harness "exercise_2_comparative_analysis_of_slope_calc/exercise" "run_slope_methods.py"
 run_harness "exercise_3_hydrological_feature_engineering_t/exercise" "run_twi_d8.py"
 run_harness "exercise_4_the_geoai_feature_stack_modificati/exercise" "run_feature_stack.py"

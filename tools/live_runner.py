@@ -37,7 +37,7 @@ MODEL_DEFAULT = "~deepseek/deepseek-flash-latest"
 # chapter, project, listing, timeout (s), note
 # A sixth element marks a row as slow: `--slow` includes it.
 ROWS: list[tuple] = [
-    (18, "advanced_application_script_geopandas_text_to/example",
+    (18, "geopandas_text_to_map_agent/example",
      "01_text_to_map_agent.py", 240, "ReAct agent writes GeoPandas code"),
     (18, "exercise_5_interactive_challenge_tool_orchest/exercise",
      "01_tool_orchestration.py", 300, "two-tool planner, recovers from a bad call"),

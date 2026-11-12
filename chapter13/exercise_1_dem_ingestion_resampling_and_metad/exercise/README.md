@@ -1,48 +1,63 @@
-# Exercise 1 — the prompt, and where its solution lives
+# Exercise 1 — 1 m DEM to 10 m, with the footprint unchanged
 
 ## What it does
 
-Holds the code block the book prints as the exercise's starting point: two empty
-function signatures, one for the new dimensions and one for the resample-and-write.
-The task is to load a 1 m DEM, inspect its metadata and resample it to 10 m without
-moving its footprint.
+Writes a 1000×1000 DEM at 1 m, inspects its metadata, computes the new grid and the
+new transform, resamples with bilinear interpolation, verifies that the mean and the
+standard deviation survived, and writes the 100×100 result at 10 m.
 
 ## The listings
 
 | file | what it is |
 | --- | --- |
-| `prompt_sketch_exercise_1.py` | the prompt sketch, exactly as the exercise prints it — not a program |
-| `../exercise_1/exercise/files/resample_dem.py` | the worked solution, one folder over |
+| `prompt_sketch_exercise_1.py` | the exercise statement, exactly as the book prints it |
+| `resample_dem.py` | the solution: the dimension helper, `reproject`, the new profile |
+| `run_resample_dem.py` | the harness: the cell size, the preserved bounds, the mean |
 
 ## Run it
 
 ```bash
-cd chapter13/exercise_1/exercise/files
+cd chapter13/exercise_1_dem_ingestion_resampling_and_metad/exercise/files
 python3 resample_dem.py
 ```
 
-The sketch beside this README defines two functions that `pass`, so there is nothing
-to run: the runnable version, its harness and the measured numbers live in the
-sibling `exercise_1/` project. That harness asserts 31 facts — the new grid, the
-preserved extent, the mean on both sides — and exits non-zero if any of them changes.
+It prints the input metadata, the statistics before and after the resample, the new
+grid and transform and whether the extent survived, then writes both GeoTIFFs.
+`run_resample_dem.py` asserts 31 facts — 100 cells at 10 m, the same four edges to the
+micrometre, a mean of 202.3 m on both sides — and exits non-zero if any of them
+changes.
 
 ```text
-# Required Python libraries and concepts:
-import rasterio
-import numpy as np
-# Function to calculate new dimensions for resampling
-def calculate_new_dims(original_width, original_height, scale_factor):
-    # Logic to return new_width and new_height
-    pass
+--- Original DEM Metadata ---
+Dimensions (W x H): 1000 x 1000
+Resolution (X, Y): (1.0, 1.0)
+CRS: EPSG:32617
+Data Type: float32
+
+--- Statistical Verification ---
+Original Mean/Std: 202.30 / 115.48
+Resampled Mean/Std: 202.30 / 115.45
+Mean difference: 0.00 m
+
+New grid: 100 x 100 at 10.0 m
+Extent preserved: True
+Successfully wrote resampled DEM to output/resampled_output_dem.tif
 ```
 
 ## What it produces
 
-Nothing. It is a prompt: the output belongs to the solution folder.
+| path | what it is |
+| --- | --- |
+| `output/simulated_input_dem.tif` | the 1 m DEM, 1000×1000 cells, EPSG:32617 |
+| `output/resampled_output_dem.tif` | the 10 m DEM, 100×100 cells, same extent |
+| `output/dem_resampling.json` | written by the harness: both profiles, the mean, the bounds |
 
 ## Notes
 
-- The sketch is the statement as printed in the book, kept as it stands so you can
-  compare what you were given with the worked answer next door.
-- This folder has no harness and no `output/`; `run_resample_dem.py` in the sibling
-  folder is the grader.
+- The transform is `src.transform * Affine.scale(10, 10)`, not `src.transform *
+  src.transform.scale(...)` on a copy: the pixel size grows by the ratio of the grids
+  and the origin stays where it was.
+- Bilinear is the right kernel for elevation. Nearest would keep a 1 m value and call
+  it a 10 m cell; cubic would overshoot on ridges.
+- The mean is the check, not the proof: a resample can preserve the mean and still
+  lose the ridge lines. The standard deviation is the second half of that check.
