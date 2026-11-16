@@ -200,10 +200,12 @@ python -m venv .venv
 
 `run_everything.sh` is a bash script. On Windows, run the two commands it would chain —
 `run_offline.py` and `tools\live_runner.py` — and install the optional extras only if
-you want them. Three differences worth knowing: `torch` is optional (chapters 16 and 19
+you want them. Four differences worth knowing: `torch` is optional (chapters 16 and 19
 skip themselves), chapter 17's real segmenter needs a package that is not on PyPI and a
-375 MB checkpoint (the stand-in says so), and no listing needs a POSIX shell — paths
-come from `pathlib` and artefacts go to the project's `output/`.
+375 MB checkpoint (the stand-in says so), no listing needs a POSIX shell — paths come
+from `pathlib` and artefacts go to the project's `output/` — and a listing that prints
+the path it wrote prints it with the platform's separator, so on Windows you will see
+`output\map.html` where the book shows `output/map.html`.
 
 ## What a run writes
 

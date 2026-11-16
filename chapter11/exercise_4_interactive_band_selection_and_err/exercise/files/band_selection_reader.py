@@ -74,7 +74,13 @@ def interactive_band_reader(image_path: str, choice=None):
                     print("No terminal attached: reading band 1.")
                     choice = "1"
                 else:
-                    choice = input(f"Enter the band number (1 to {band_count}): ")
+                    try:
+                        choice = input(f"Enter the band number (1 to {band_count}): ")
+                    except (EOFError, OSError):
+                        # Windows reports a redirected stdin as a terminal; with no
+                        # line to read, the default is the documented answer.
+                        print("No terminal attached: reading band 1.")
+                        choice = "1"
 
             band_index, error = parse_band_choice(choice, band_count)
             if error:

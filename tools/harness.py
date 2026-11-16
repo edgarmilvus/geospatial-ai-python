@@ -65,7 +65,13 @@ class Harness:
                           % (message, actual, expected, tol))
 
     def contains(self, haystack, needle, message):
-        return self.check(needle in haystack, "%s (missing %r)" % (message, needle))
+        found = needle in haystack
+        if not found and "/" in needle:
+            # A listing prints the path it wrote, and Windows prints it with
+            # backslashes. The claim being checked is that the file is named,
+            # not which separator the platform chose.
+            found = needle in haystack.replace("\\", "/")
+        return self.check(found, "%s (missing %r)" % (message, needle))
 
     def raises(self, layer, exception, message):
         try:

@@ -36,16 +36,22 @@ df['last_inspection_dt'] = pd.to_datetime(df['last_inspection_date']).dt.date
 
 # 2. Interactive Input and 5. Robustness Check
 if sys.stdin.isatty():
-    while True:
-        try:
-            threshold_days = input("Enter inspection threshold in days (e.g., 30): ")
-            threshold_days = int(threshold_days)
-            if threshold_days <= 0:
-                print("Please enter a positive integer.")
-                continue
-            break
-        except ValueError:
-            print("Invalid input. Please enter a whole number.")
+    try:
+        while True:
+            try:
+                threshold_days = input("Enter inspection threshold in days (e.g., 30): ")
+                threshold_days = int(threshold_days)
+                if threshold_days <= 0:
+                    print("Please enter a positive integer.")
+                    continue
+                break
+            except ValueError:
+                print("Invalid input. Please enter a whole number.")
+    except (EOFError, OSError):
+        # Windows reports a redirected stdin as a terminal; with nothing to read,
+        # the documented default is the answer rather than a traceback.
+        threshold_days = DEFAULT_THRESHOLD_DAYS
+        print(f"No terminal attached: using the default threshold of {threshold_days} days.")
 else:
     # Pipeline, notebook or harness: no keyboard to wait for, so take the default.
     threshold_days = DEFAULT_THRESHOLD_DAYS
